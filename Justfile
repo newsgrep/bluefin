@@ -122,7 +122,7 @@ build $image="bluefin" $tag="latest" $flavor="main" rechunk="0" ghcr="0" pipelin
     image_name=$(just image_name {{ image }} {{ tag }} {{ flavor }})
 
     # Base Image
-    base_image_name="silverblue"
+    base_image_name="cosmic-atomic"
 
     # Target
     if [[ "${image}" =~ dx ]]; then
@@ -330,7 +330,7 @@ rechunk $image="bluefin" $tag="latest" $flavor="main" ghcr="0" pipeline="0":
 
     # Cleanup Space during Github Action
     if [[ "{{ ghcr }}" == "1" ]]; then
-        base_image_name=silverblue-main
+        base_image_name=cosmic-atomic-main
         if [[ "${tag}" =~ stable ]]; then
             tag="stable-daily"
         fi
@@ -587,7 +587,7 @@ build-iso $image="bluefin" $tag="latest" $flavor="main" ghcr="0" pipeline="0":
     iso_build_args+=(IMAGE_TAG="${tag}")
     iso_build_args+=(ISO_NAME="/github/workspace/${build_dir}/${image_name}-${tag}-$(uname -m).iso")
     iso_build_args+=(SECURE_BOOT_KEY_URL="https://github.com/ublue-os/akmods/raw/main/certs/public_key.der")
-    iso_build_args+=(VARIANT="Silverblue")
+    iso_build_args+=(VARIANT="cosmic-atomic")
     iso_build_args+=(VERSION="${FEDORA_VERSION}")
     iso_build_args+=(WEB_UI="false")
 
