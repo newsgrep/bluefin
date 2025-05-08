@@ -9,8 +9,6 @@ on:
         required: false
         default: false
         type: boolean
-  schedule:
-    - cron: "0 1 * * *"   
 
 env:
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"
@@ -28,21 +26,9 @@ jobs:
       fail-fast: false
       matrix:
         platform: [amd64]
-        flavor: ["", "nvidia-open"]
-        image_version: ["gts", "stable"]
-        include:
-          - platform: amd64
-            flavor: ""
-            image_version: lts
-          - platform: arm64
-            flavor: ""
-            image_version: lts
-          - platform: amd64
-            flavor: gdx
-            image_version: lts
-          - platform: arm64
-            flavor: gdx
-            image_version: lts
+        flavor: [""]
+        image_version: ["latest"]
+        
     permissions:
       contents: read
       packages: read
