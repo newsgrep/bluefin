@@ -2,6 +2,7 @@
 	"all": {
 		"include": {
 			"all": [
+				"virtualbox-guest-additions",
 				"adcli",
 				"adw-gtk3-theme",
 				"bash-color-prompt",
