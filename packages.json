@@ -2,7 +2,7 @@
 	"all": {
 		"include": {
 			"all": [
-				"virtualbox-guest-additions", "libwayland-client", "libx11", 
+				"virtualbox-guest-additions", "wayland-devel", "libX11-devel", 
 				"adcli",
 				"adw-gtk3-theme",
 				"bash-color-prompt",
